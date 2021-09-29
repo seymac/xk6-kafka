@@ -44,6 +44,7 @@ func (*Kafka) Writer(brokers []string, topic string, auth string, compression st
 		BatchSize: 1,
 		Dialer:    dialer,
 		Async:     false,
+		RequiredAcks: 1,
 	}
 
 	if codec, exists := CompressionCodecs[compression]; exists {
